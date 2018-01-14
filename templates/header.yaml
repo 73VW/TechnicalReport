@@ -1,0 +1,46 @@
+---
+title: Project title
+subtitle: Project subtitle
+lang: fr
+language: french
+author:
+- lastname: Pedretti
+  firstname: Maël
+- lastname: Another author lastname here
+  firstname: Another author firstname here
+
+responsable:
+- lastname: A manager lastname here
+  firstname: A manager firstname here
+- lastname: Another manager lasname here
+  firstname: Another manager firstname here
+
+date: \today
+pagesize: a4
+
+institut:
+  name: Example
+#  logo: Path to your institut logo
+  logo_scale: 0.6
+
+project_logo: img/samiral
+project_logo_scale: 0.4
+
+# styles
+#alignment: <alignment>
+fontsize: 12pt
+colorlinks: darkblue
+
+documentclass: scrreprt
+documentoptions: twoside
+
+numbersections: true
+
+toc: true
+toc-depth: 1
+lof: true
+
+abstract: |
+    This document is the base config file you have to update
+
+---
