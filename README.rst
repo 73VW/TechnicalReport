@@ -1,16 +1,14 @@
-Français
---------
+`Français`
+----------
 
-Les fichiers présents dans ce dépôt permettent la création d'un rapport pdf en utilisant un fichier source rst ou md en utilisant pandoc et latex. Un template et un fichier de configuration disponibles dans le dossier templates sont utilisés.
+Ce projet a pour but de fournir un outil de création de rapports technique au format pdf à partir d'un fichier au format rst ou md.
+Pour en savoir plus, `cliquez ici`_
 
-**Testé uniquement sur windows!**
+`English`
+---------
 
-Le pdf créé à partir de ce readme se trouve dans le dépôt à titre d'exemple.
+The purpose of this project is to provide a tool for creating technical reports in pdf format from a rst or md format file.
+To learn more, `click here`_
 
-À faire
-#######
-
-1. Créer le fichier rest ou markdown contenant juste le contenu du rapport (comme ce readme)
-2. Renseigner les champs nécessaires présents dans le fichier templates/header.yaml
-3. Ouvrir un terminal au niveau du Makefile et lancer la commande `make`. L'aide s'affiche.
-4. En utilisant `make all` sans paramètres, le script cherche les fichiers rst ou md et génère les pdf correspondants.
+.. _`cliquez ici`: ./TechnicalReportGenerator
+.. _`click here`: ./TechnicalReportGenerator
