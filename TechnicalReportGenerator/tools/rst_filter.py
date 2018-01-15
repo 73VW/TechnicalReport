@@ -8,7 +8,7 @@ Code, link URLs, etc. are not affected.
 
 import re
 
-from pandocfilters import Image, RawInline, toJSONFilter
+from pandocfilters import Image, RawInline, toJSONFilter, Str
 
 
 def rstFilter(key, value, format, meta):
@@ -22,18 +22,19 @@ def rstFilter(key, value, format, meta):
     in order to be able to make a reference to them.
     """
     if key == 'Str':
-        if re.search("\$ref.*\$", value):
+        if re.search("\$ref", value):
             # if we find a link, set it as raw link and re-add a
             # backslash before the ref keyword
             return RawInline('latex', value[:1] + "\\" + value[1:])
+        elif re.search(".*}\$", value):
+            return RawInline('latex', value)
 
-    if key == 'Image':
+    elif key == 'Image':
         [attrs, caption, src] = value
+        new_capt = src[0]
         # add \label{IMAGE_LABEL} to the picture description
-        new_desc = caption[0]['c'] + "\\" + "label{" + caption[0]['c'] + "}"
-        caption[0] = RawInline('latex', new_desc)
-        # set picture type to figure
-        src[1] = 'fig:'
+        new_desc = "\\" + "label{" + new_capt + "}"
+        caption.append(RawInline('latex', new_desc))
         return Image(attrs, caption, src)
 
 

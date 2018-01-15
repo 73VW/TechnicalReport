@@ -34,11 +34,11 @@ def mdFilter(key, value, format, meta):
         [attrs, caption, src] = value
         # this means the image label hasn't been modified yet
         # (the mardown file doesn't come from a rst file)
-        if len(caption) is 1:
+        if caption[-1]['t'] != 'RawInline':
+            new_capt = src[0]
             # add \label{IMAGE_LABEL} to the picture description
-            new_title = caption[0]['c'] + "\\" + \
-                "label{" + caption[0]['c'] + "}"
-            caption[0] = RawInline('latex', new_title)
+            new_desc = "\\" + "label{" + new_capt + "}"
+            caption.append(RawInline('latex', new_desc))
             return Image(attrs, caption, src)
 
 

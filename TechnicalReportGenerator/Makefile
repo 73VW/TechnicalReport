@@ -23,12 +23,12 @@ all: ${DESTINATIONS} ## Build all rst or md files to pdf
 
 %.md: %.rst ## Converts from rst to md
 	pandoc $< \
-		--filter tools\rst_filter.py \
+		--filter tools/rst_filter.py \
 		--output $@
 
 %.tex: %.rst tools/project_infos.yaml ## Converts from rst to tex
 	pandoc $< \
-		--filter tools\rst_filter.py \
+		--filter tools/rst_filter.py \
 		--lua-filter tools/getMetadata.lua \
 		--standalone \
 		--listings \

@@ -18,12 +18,16 @@ Le pdf créé à partir de ce readme se trouve dans le dépôt à titre d'exempl
 Essai d'utilisation d'image
 ###########################
 
-.. image:: img\samiral.png
-    :alt: samiral-logo
+.. figure:: img/samiral.png
     :width: 30%
     :height: 30%
+    :alt: samiral-logo
 
-Peut importe où se place la figure Fig. $\ref{samiral-logo}$, elle sera référencée dans le lien.
+    Voici le logo du S-Amiral crew!
+
+    Ce logo ne représente pas grand chose si ce n'est le nom du crew.
+
+Peu importe où se place la figure Fig. $\ref{img/samiral.png}$, elle sera référencée dans le lien.
 
 
 `English`
@@ -46,6 +50,6 @@ How to
 Image usage test
 ################
 
-It doesn't matter where the figure Fig. $\ref{samiral-logo}$ will go. It will always be linked.
+It doesn't matter where the figure Fig. $\ref{img/samiral.png}$ will go. It will always be linked.
 
 .. _tools: ./tools
