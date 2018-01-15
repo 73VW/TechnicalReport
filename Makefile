@@ -1,11 +1,11 @@
 ifeq ('$(SOURCE_EXT)', '')
 SOURCE_EXT=rst md
 endif
-SOURCES = $(wildcard *.${SOURCE_EXT})
+SOURCES:=$(foreach ext, $(SOURCE_EXT), $(wildcard *.$(ext)))
 ifeq ('$(DEST_EXT)', '')
 DEST_EXT=pdf
 endif
-DESTINATIONS = $(addsuffix .$(DEST_EXT),$(basename ${SOURCES}))
+DESTINATIONS:=$(foreach source, $(SOURCES), $(addsuffix .$(DEST_EXT),$(basename $(source))))
 GENERATED_DIR=generated
 
 help: ## Show help
@@ -20,33 +20,32 @@ help: ## Show help
 .PHONY: all
 
 all: ${DESTINATIONS} ## Build all rst or md files to pdf
-	make clean
 
 %.md: %.rst ## Converts from rst to md
 	pandoc $< \
 		--output $@
 
-%.tex: %.md ## Converts from md to tex
-	cat templates/header.yaml $< > "${<:.md=.tmp}"
-	mv "${<:.md=.tmp}" $<
+%.tex: %.md tools/project_infos.yaml ## Converts from md to tex
 	pandoc $< \
+		--lua-filter tools/getMetadata.lua \
 		--standalone \
 		--listings \
 		--to latex \
-		--template templates/template.tex \
+		--template tools/template.tex \
 		--top-level-division section \
 		--output $@
 
 %.pdf: %.tex ## Converts from tex to pdf
-	mkdir $(GENERATED_DIR)
-	#Don't know why but have to run it twice to have it work
-	xelatex $< \
-		--quiet \
-		--output-directory=$(GENERATED_DIR)
-	xelatex $< \
-		--quiet \
-		--output-directory=$(GENERATED_DIR)
-	mv $(GENERATED_DIR)/*.pdf .
+	latexmk -pdf -xelatex $<
+	latexmk -c $<
 
-clean: ## Clean temporary files generated during conversion
-	rm -r generated
+
+%.json: %.md
+	pandoc $< --to json --lua-filter=getMetadata.lua | python -m json.tool > ${<:.md=.json}
+
+
+%.json: %.rst
+	pandoc $< --to json --lua-filter=getMetadata.lua | python -m json.tool > ${<:.rst=.json}
+
+clean:
+	rm *.pdf
