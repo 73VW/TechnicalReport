@@ -1,0 +1,55 @@
+dist: trusty
+sudo: required
+
+language: python
+python: 3.6
+
+cache: apt
+
+# thanks @greut for the base part of addons and install parts!
+addons:
+  apt:
+    packages:
+      - latex-xcolor
+      - lmodern
+      - make
+      - texlive
+      - texlive-generic-recommended
+      - texlive-latex-extra
+      - texlive-fonts-extra
+      - texlive-fonts-recommended
+      - texlive-lang-french
+      - texlive-latex-extra
+      - texlive-math-extra
+      - texlive-xetex
+      - fonts-linuxlibertine
+      - latexmk
+      - librsvg2-bin
+
+install:
+  - wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb -O pandoc.deb
+  - sudo dpkg -i pandoc.deb
+  - wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/linux-ghc8-pandoc-2-0.tar.gz
+  - tar xf linux-ghc8-pandoc-2-0.tar.gz
+  - sudo mv pandoc-crossref /usr/local/bin
+  - pip install -r requirements.txt
+  - chmod 777 test.sh
+  - chmod 777 makeScript.sh
+
+# use next lines if you want to use travis parallel test
+env:
+  global:
+    - PANDOC_VERSION=2.1
+    - PANDOC_CROSSREF_VERSION=0.3.0.0
+
+jobs:
+  include:
+    - stage: test
+      script: ./test.sh
+    - stage: build
+      script: ./makeScript.sh
+
+notifications:
+  email:
+    on_failure: never
+    on_pull_requests: never

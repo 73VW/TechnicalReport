@@ -39,7 +39,7 @@ all: ${DESTINATIONS} ## Build all rst or md files to pdf
 
 %.tex: %.md tools/project_infos.yaml ## Converts from md to tex
 	pandoc $< \
-		--filter tools\md_filter.py \
+		--filter tools/md_filter.py \
 		--lua-filter tools/getMetadata.lua \
 		--standalone \
 		--listings \

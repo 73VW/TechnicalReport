@@ -5,7 +5,7 @@ Les fichiers présents dans ce dépôt permettent la création d'un rapport pdf 
 
 ⚠️**Testé uniquement sur windows!**
 
-Le pdf créé à partir de ce readme se trouve dans le dépôt à titre d'exemple.
+Le pdf_ créé à partir de ce readme se trouve dans le dépôt à titre d'exemple.
 
 À faire
 #######
@@ -37,7 +37,7 @@ The files in this repository allow to create a pdf report using a `md` or `rst` 
 
 ⚠️**Only tested on windows for the moment!**
 
-The pdf file created from this readme can be found in the repository as an example
+The pdf_ file created from this readme can be found in the repository as an example
 
 How to
 #######
@@ -53,3 +53,4 @@ Image usage test
 It doesn't matter where the figure Fig. $\ref{img/samiral.png}$ will go. It will always be linked.
 
 .. _tools: ./tools
+.. _pdf: https://github.com/73VW/TechnicalReport/blob/build/README.pdf
