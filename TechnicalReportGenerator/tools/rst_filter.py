@@ -8,7 +8,7 @@ Code, link URLs, etc. are not affected.
 
 import re
 
-from pandocfilters import Image, RawInline, toJSONFilter, Str
+from pandocfilters import Image, RawInline, toJSONFilter
 
 
 def rstFilter(key, value, format, meta):
