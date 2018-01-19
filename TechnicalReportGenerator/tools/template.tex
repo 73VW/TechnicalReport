@@ -92,6 +92,24 @@
 }
 
 %----------------------------------------------------------------------------------------
+%	Tables
+%----------------------------------------------------------------------------------------
+% Table formatting:
+% What if you make a table? -- Pandoc knows, of course, and
+% then declares that its  variable `table` is True and
+% imports a table package suitable to its pleasantly simple tables.
+% Needless to say infinitely   complicated tables are possible in
+% LaTeX with suitable packages. We are spared the temptation:
+% Source : https://gist.github.com/bosmacs/1052004
+
+$if(tables)$
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+$endif$
+
+%----------------------------------------------------------------------------------------
 %
 %                           DOCUMENT
 %
