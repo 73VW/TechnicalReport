@@ -1,9 +1,29 @@
 `Technical Report`
 ------------------
 
-.. image:: https://travis-ci.org/73VW/TechnicalReport.svg?branch=master
+.. image:: 	https://img.shields.io/travis/73VW/TechnicalReport.svg?style=for-the-badge
     :target: https://travis-ci.org/73VW/TechnicalReport
+    :alt: Build status
 
+.. image:: https://img.shields.io/github/license/73VW/TechnicalReport.svg?style=for-the-badge
+    :target: http://doge.mit-license.org
+    :alt: MIT License
+
+.. image:: https://img.shields.io/github/issues-raw/73VW/TechnicalReport.svg?style=for-the-badge
+    :target: https://github.com/73VW/TechnicalReport/issues
+    :alt: Opened issues
+
+.. image:: https://img.shields.io/github/last-commit/73VW/TechnicalReport.svg?style=for-the-badge
+    :target: https://github.com/73VW/TechnicalReport/commits/master
+    :alt: Last commit date
+
+.. image:: https://img.shields.io/github/languages/top/73VW/TechnicalReport.svg?style=for-the-badge
+        :target: https://github.com/73VW/TechnicalReport
+        :alt: Top language
+
+.. image:: https://img.shields.io/github/languages/count/73VW/TechnicalReport.svg?style=for-the-badge 
+        :target: https://github.com/73VW/TechnicalReport
+        :alt: Number of languages
 
 `C'est quoi?`
 =============
