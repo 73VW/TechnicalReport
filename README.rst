@@ -1,7 +1,7 @@
 `Technical Report`
 ------------------
 
-.. image:: https://travis-ci.org/73VW/TechnicalReport.svg?branch=Travis
+.. image:: https://travis-ci.org/73VW/TechnicalReport.svg?branch=master
     :target: https://travis-ci.org/73VW/TechnicalReport
 
 
