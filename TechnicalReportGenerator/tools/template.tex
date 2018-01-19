@@ -29,6 +29,7 @@
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{multicol}
+\usepackage[figure]{totalcount}
 
 %----------------------------------------------------------------------------------------
 %   SETTINGS CONFIGURATIONS
@@ -200,9 +201,18 @@ $endif$
 %----------------------------------------------------------------------------------------
 
 \renewcommand{\thepage}{\roman{page}} % Change page numbers to roman
-
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
-\listoffigures
+}
+$endif$
+$if(lof)$
+\iftotalfigures
+  \listoffigures
+\fi
+$endif$
 
 \newpage
 \setcounter{page}{1}
