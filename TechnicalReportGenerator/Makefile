@@ -8,6 +8,10 @@ endif
 DESTINATIONS:=$(foreach source, $(SOURCES), $(addsuffix .$(DEST_EXT),$(basename $(source))))
 GENERATED_DIR=generated
 
+# clean files
+CLEAN_EXT=pdf aux fdb_latexmk fls out tex toc xdv
+CLEAN_SOURCES:=$(foreach ext, $(CLEAN_EXT), $(wildcard *.$(ext)))
+
 help: ## Show help
 	@printf "Technical report Creator using pandoc\
 	\n\n\
@@ -61,4 +65,4 @@ all: ${DESTINATIONS} ## Build all rst or md files to pdf
 	pandoc $< --to json --lua-filter=getMetadata.lua | python -m json.tool > ${<:.rst=.json}
 
 clean:
-	rm *.pdf
+	rm $(CLEAN_SOURCES)
