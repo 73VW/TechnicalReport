@@ -36,6 +36,9 @@ documentoptions: twoside
 
 numbersections: true
 
+# specify if you want your abstract on title page or on a second page
+abstractontitlepage: false
+
 toc: true
 toc-depth: 1
 lof: true
