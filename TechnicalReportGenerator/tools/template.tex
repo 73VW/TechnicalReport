@@ -9,7 +9,6 @@
 %	Packages
 %----------------------------------------------------------------------------------------
 
-
 \usepackage{pdflscape}
 \usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
 \usepackage{listings}
@@ -30,7 +29,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{multicol}
 \usepackage[figure]{totalcount}
-
+\usepackage[bottom]{footmisc}
 %----------------------------------------------------------------------------------------
 %   SETTINGS CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -58,6 +57,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[x11names, rgb, html]{xcolor}
+\usepackage{pdfpages}
 
 \lstset{ %
   belowcaptionskip=1\baselineskip,
@@ -65,7 +65,7 @@
   xleftmargin=\parindent,
   frame=single,
   showstringspaces=false,
-  basicstyle=\footnotesize\consolas,
+  basicstyle=\footnotesize,
   keywordstyle=\bfseries\color{green!40!black},
   commentstyle=\itshape\color{purple!40!black},
   identifierstyle=\color{blue},
