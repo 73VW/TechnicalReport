@@ -47,6 +47,13 @@ To learn more, `click here`_
 
 - `Rapport technique avec Markdown et Pandoc`_
 
+`Contribute`
+============
+
+All contributions are welcomed.
+
+Please look at the contribution standards first. They can be found `here <CONTRIBUTING.md>`_.
+
 .. _`cliquez ici`: ./TechnicalReportGenerator
 .. _`click here`: ./TechnicalReportGenerator
 .. _`Yoan Blanc`: https://www.github.com/greut
