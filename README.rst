@@ -1,7 +1,7 @@
 `Technical Report`
 ------------------
 
-.. image:: 	https://img.shields.io/travis/73VW/TechnicalReport.svg?style=for-the-badge
+.. image:: 	https://img.shields.io/travis/73VW/TechnicalReport/master.svg?style=for-the-badge
     :target: https://travis-ci.org/73VW/TechnicalReport
     :alt: Build status
 
@@ -21,7 +21,7 @@
         :target: https://github.com/73VW/TechnicalReport
         :alt: Top language
 
-.. image:: https://img.shields.io/github/languages/count/73VW/TechnicalReport.svg?style=for-the-badge 
+.. image:: https://img.shields.io/github/languages/count/73VW/TechnicalReport.svg?style=for-the-badge
         :target: https://github.com/73VW/TechnicalReport
         :alt: Number of languages
 
