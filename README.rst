@@ -29,13 +29,23 @@
 =============
 
 Ce projet a pour but de fournir un outil de création de rapports technique au format pdf à partir d'un fichier au format rst ou md.
-Pour en savoir plus, `cliquez ici`_
+Pour en savoir plus, rendez vous dans le dossier `TechnicalReportGenerator`_.
+
+`Plus`
+======
+
+Il est maintenant possible de générer un journal de travail basé sur les commits d'un dépôt. Il est possible de trouver de plus amples informations dans le dossier `WorkLogGenerator`_.
 
 `What is this?`
 ===============
 
 The purpose of this project is to provide a tool for creating technical reports in pdf format from a rst or md format file.
-To learn more, `click here`_
+To learn more, go to the `TechnicalReportGenerator`_ folder.
+
+`More`
+======
+
+It is now possible to generate a work log based on the commits of a repository. You can find more information in the `WorkLogGenerator`_ folder.
 
 `Remerciements/Thanks`
 ======================
@@ -54,7 +64,7 @@ All contributions are welcomed.
 
 Please look at the contribution standards first. They can be found `here <CONTRIBUTING.md>`_.
 
-.. _`cliquez ici`: ./TechnicalReportGenerator
-.. _`click here`: ./TechnicalReportGenerator
+.. _`WorkLogGenerator`: ./WorkLogGenerator
+.. _`TechnicalReportGenerator`: ./TechnicalReportGenerator
 .. _`Yoan Blanc`: https://www.github.com/greut
 .. _`Rapport technique avec Markdown et Pandoc`: https://github.com/HE-Arc/rapport-technique

@@ -3,7 +3,7 @@
 set -xe
 
 cd TechnicalReportGenerator
-make all
+make all || echo "Error while building the report."
 
 # deploy
 test "${TRAVIS_PULL_REQUEST}" = "false" \
@@ -19,4 +19,4 @@ test "${TRAVIS_PULL_REQUEST}" = "false" \
     git commit -m "Deployed to github build branch"
     git push -f -q "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}" master:build
   ) \
-  || echo ":-)"
+  || echo "Impossible to deploy."

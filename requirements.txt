@@ -6,3 +6,6 @@ pydocstyle
 rstcheck
 # Build
 pandocfilters
+
+# WorkLog
+pygithub
