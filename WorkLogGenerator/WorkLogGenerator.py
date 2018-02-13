@@ -4,8 +4,6 @@ import sys
 
 from github import Github
 
-from tokens import GITHUB_TOKEN
-
 
 def format_message_for_rst(message):
     """Format message for a nice rst print."""
@@ -18,14 +16,15 @@ def format_message_for_rst(message):
     return new_message
 
 
-def main(output, repo_name):
+def main(output, token, repo_name):
     """
     Catch main function.
 
     Read commits from repo_name and write to output file in rst format.
     """
     restTructuredText = ""
-    g = Github(GITHUB_TOKEN)
+
+    g = Github(token)
     message = "Journal de travail"
     restTructuredText += message + "\n"
     restTructuredText += '=' * len(message) + "\n" * 2
@@ -41,11 +40,33 @@ def main(output, repo_name):
         f.write(restTructuredText)
 
 
+def get_possible_repos(token):
+    print('Your available repositories are:')
+
+    g = Github(token)
+    for repo in g.get_user().get_repos():
+        print(f'\t{repo.name}')
+
+
+def get_token():
+    try:
+        GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
+    except KeyError as e:
+        print(f'Environnement variable {e} not found!')
+        print('Put your github token in an environnement variable!')
+        exit(-1)
+
+    return GITHUB_TOKEN
+
+
 if __name__ == "__main__":
 
+    tok = get_token()
+
     if len(sys.argv) < 2:
-        exit("Il est nécessaire de spécifier sur \
-             quel dépôt effectuer la recherche")
+        print("Please specify the target repository.")
+        get_possible_repos(tok)
+        exit(-1)
 
     output = 'workLog.rst'
     repo_name = str(sys.argv[1])
@@ -53,4 +74,4 @@ if __name__ == "__main__":
     if os.path.isfile(output):
         os.remove(output)
 
-    main(output, repo_name)
+    main(output, tok, repo_name)

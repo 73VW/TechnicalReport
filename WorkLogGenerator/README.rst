@@ -9,7 +9,7 @@ Ce simple script python permet de générer un journal de travail au format rst 
 🔘 Comment l'utiliser?
 =======================
 
-Il est nécessaire de commencer par générer un jeton d'accès et de l'écrire dans le fichier tokens.py.
+Il est nécessaire de commencer par générer un jeton d'accès et de l'exporter comme variable d'environnement sous le nom `GITHUB_TOKEN`.
 
 Pour le générer, rendez-vous `ici`_ dans la section "Personal access tokens".
 
@@ -32,7 +32,7 @@ This simple python script allows you to generate a worklog in rst format based o
 🔘 How to use it?
 =================
 
-Simply generate a personnal access token and put it in the file tokens.py.
+Simply generate a personnal access token and export it as an environnement variable called `GITHUB_TOKEN`.
 
 In order to generate this token, go `here`_ under "Personal access tokens".
 
