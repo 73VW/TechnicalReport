@@ -11,3 +11,7 @@ pandocfilters
 pygithub
 PyQt5
 qdarkstyle
+
+# Folder tree
+pygraphviz
+Pillow

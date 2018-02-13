@@ -44,9 +44,9 @@ env:
 
 jobs:
   include:
-    - stage: test
+    - stage: Test
       script: ./test.sh
-    - stage: build
+    - stage: Build
       script: ./makeScript.sh
 
 notifications:
