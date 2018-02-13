@@ -14,10 +14,12 @@ Please provide enough information so that others can review your pull request:
 ## 💻 Status
 **READY/IN DEVELOPMENT**
 
-Don't forget to update PR tags!
+<!--- ⚠️ Don't forget to update PR tags! -->
 
 ## #️⃣ Related #?
+<!---
 If this PR is related to an issue, check this [documentation](https://help.github.com/articles/closing-issues-using-keywords/)
+-->
 
 ## 👽 Types of changes
 <!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
@@ -38,5 +40,6 @@ If this PR is related to an issue, check this [documentation](https://help.githu
 - [ ] Other (Detail in description above)
 
 ## ➕ More
-If you need you need help or have doubts, ping team members (@johndacost or @73VW)
+<!--- If you need you need help or have doubts, ping team members (@johndacost or @73VW)
 Otherwise, you can write here anything that is not covered above.
+-->
