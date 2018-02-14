@@ -9,15 +9,13 @@ Ce simple script python permet de générer un journal de travail au format rst 
 🔘 Comment l'utiliser?
 =======================
 
-Il est nécessaire de commencer par générer un jeton d'accès et de l'écrire dans le fichier tokens.py.
+Il est nécessaire de commencer par générer un jeton d'accès et de l'entrer dans le premier champ de la fenêtre.
 
 Pour le générer, rendez-vous `ici`_ dans la section "Personal access tokens".
 
-À présent, vous pouvez appeler le script avec le dépôt désiré comme paramètre.
+À présent, il est possible de presser sur le bouton de connexion. Dès lors, une liste déroulante affiche les dépôts disponibles.
 
-À titre d'example, si nous désirions générer un journal de travail basé sur ce dépôt, il nous suffirait de lancer `python get_commits_and_write.py TechnicalReportGenerator`.
-
-Le nom du fichier généré est "workLog.rst".
+Après le choix du dépôt, le dernier bouton permet d'ouvrir le log, de le modifier et de le sauvegarder au format rst.
 
 Il est maintenant possible de le convertir en utilisant pandoc ou n'importe quelle autre convertisseur que vous préférez.
 
@@ -32,15 +30,13 @@ This simple python script allows you to generate a worklog in rst format based o
 🔘 How to use it?
 =================
 
-Simply generate a personnal access token and put it in the file tokens.py.
+Simply generate a personnal access token and enter it in the first field of the window.
 
 In order to generate this token, go `here`_ under "Personal access tokens".
 
-Then, you can call the script with the repo you want to use as parameter.
+Then, it is possible to press on the connection button. Since then a dropdown list display the available repositories.
 
-As an example, if we wanted to generate a worklog based on this repository, we would just run `python get_commits_and_write.py TechnicalReportGenerator`.
-
-The output file's name is "workLog.rst".
+After choosing the repository, the last button allows you to open the log, edit it and save it in rst format.
 
 You can then convert it using pandoc or any other converter you prefer.
 

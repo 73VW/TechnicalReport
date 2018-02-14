@@ -4,8 +4,11 @@ flake8
 pycodestyle
 pydocstyle
 rstcheck
+
 # Build
 pandocfilters
 
 # WorkLog
 pygithub
+PyQt5
+qdarkstyle
