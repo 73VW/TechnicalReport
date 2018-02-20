@@ -1,8 +1,7 @@
 # QA
-isort
 flake8
-pycodestyle
-pydocstyle
+flake8-docstrings
+isort
 rstcheck
 
 # Build

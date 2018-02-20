@@ -62,7 +62,7 @@ It is now possible to generate a work log based on the commits of a repository. 
 
 All contributions are welcomed.
 
-Please look at the contribution standards first. They can be found `here <CONTRIBUTING.md>`_.
+Please look at the contribution standards first. They can be found `here <.github/CONTRIBUTING.md>`_.
 
 .. _`WorkLogGenerator`: ./WorkLogGenerator
 .. _`TechnicalReportGenerator`: ./TechnicalReportGenerator
