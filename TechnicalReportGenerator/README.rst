@@ -27,7 +27,7 @@ Essai d'utilisation d'image
 
     Ce logo ne représente pas grand chose si ce n'est le nom du crew.
 
-Peu importe où se place la figure Fig. $\ref{img/samiral.png}$, elle sera référencée dans le lien.
+Peu importe où se place la figure Fig. (@fig:img/samiral.png), elle sera référencée dans le lien.
 
 
 `English`
@@ -50,7 +50,7 @@ How to
 Image usage test
 ################
 
-It doesn't matter where the figure Fig. $\ref{img/samiral.png}$ will go. It will always be linked.
+It doesn't matter where the figure Fig. (@fig:img/samiral.png) will go. It will always be linked.
 
 .. _tools: ./tools
 .. _pdf: https://github.com/73VW/TechnicalReport/blob/build/README.pdf

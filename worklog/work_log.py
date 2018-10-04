@@ -182,8 +182,8 @@ class MainWidget(QWidget):
 
     def line_keyPressEvent(self, event):
         """Detect enter or return key pressed."""
-        if (event.key() == QtCore.Qt.Key_Enter
-                or event.key() == QtCore.Qt.Key_Return):
+        if (event.key() == QtCore.Qt.Key_Enter or
+                event.key() == QtCore.Qt.Key_Return):
             self.getRepos()
         else:
             self.ght_keyPressEvent(event)

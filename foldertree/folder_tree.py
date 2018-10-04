@@ -3,9 +3,8 @@ import os
 import sys
 
 import pygraphviz as pgv
-from PIL import ImageFont
-
 from nodes import Node
+from PIL import ImageFont
 
 EXCLUDE = ['.git', '__pycache__']
 
@@ -195,7 +194,15 @@ def build_tree(output, td_name, target_dir, depth):
 
 def main(target_dir=".", depth=2):
     """Catch main function."""
-    td_name = os.getcwd().split("/")[-1] if target_dir is "." else target_dir
+    print(target_dir)
+    if target_dir == ".":
+        td_name = os.getcwd().split(
+            "/")[-1]
+    elif target_dir == "..":
+        td_name = os.getcwd().split(
+            "/")[-2]
+    else:
+        td_name = target_dir
 
     directory = 'generated/'
 

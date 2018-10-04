@@ -5,19 +5,19 @@ import os
 import re
 
 EXTENSIONS_TO_ICON = {
-    '.+\.sh': 'terminal',
-    '.+\.pdf': 'file-pdf',
-    '.+\.py': 'python',
-    '(license)': 'book',
-    '(\.gitignore)': 'git-merge',
-    '(^\.travis.*)': 'travis',
-    '(\.github)': 'mark-github',
-    '.+\.cfg': 'settings',
-    '(^\..*)': 'gear',
-    '(.+\.md)': 'markdown',
-    '(.+\.dot)': 'kebab-horizontal',
-    '(.+\.rst)': 'note',
-    '(.+\.(png|svg|jpe?g|bmp))': 'file-media'
+    r'.+\.sh': 'terminal',
+    r'.+\.pdf': 'file-pdf',
+    r'.+\.py': 'python',
+    r'(license)': 'book',
+    r'(\.gitignore)': 'git-merge',
+    r'(^\.travis.*)': 'travis',
+    r'(\.github)': 'mark-github',
+    r'.+\.cfg': 'settings',
+    r'(^\..*)': 'gear',
+    r'(.+\.md)': 'markdown',
+    r'(.+\.dot)': 'kebab-horizontal',
+    r'(.+\.rst)': 'note',
+    r'(.+\.(png|svg|jpe?g|bmp))': 'file-media'
 }
 
 ICON_FOLDER = 'octicons/'

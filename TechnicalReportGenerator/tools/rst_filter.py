@@ -9,6 +9,7 @@ Code, link URLs, etc. are not affected.
 import re
 
 from pandocfilters import Image
+from pandocfilters import LineBreak
 from pandocfilters import RawInline
 from pandocfilters import toJSONFilter
 
@@ -24,12 +25,32 @@ def rstFilter(key, value, format, meta):
     in order to be able to make a reference to them.
     """
     if key == 'Str':
-        if re.search("\$ref", value):
-            # if we find a link, set it as raw link and re-add a
-            # backslash before the ref keyword
-            return RawInline('latex', value[:1] + "\\" + value[1:])
-        elif re.search(".*}\$", value):
-            return RawInline('latex', value)
+        if re.search("@fig:", value):
+            p = re.compile(r'@fig:((?:\w+\/?)*\w+\.\w+)')
+            results = p.findall(value)
+            return RawInline('latex', r"\ref{" + results[0] + "}")
+
+        if re.search(r'@cite:', value):
+            p = re.compile(r'@cite:(\w+)')
+            result = p.findall(value)[0]
+            return RawInline('latex', r"\cite{" + result + "}")
+
+        if re.search("@bib:", value):
+            result = value.split(":", 1)[1]
+            inline = r"\begin{thebibliography}{50}\section{"
+            inline += result + r"}\label{" + result + "}"
+            return RawInline('latex', inline)
+
+        if re.search("@endbib", value):
+            return RawInline('latex', r"\end{thebibliography}")
+
+        if re.search("@bibitem", value):
+            title, desc, date, url = value.split(":", 1)[1].split(", ")
+            inline = r"\bibitem{" + title + "} " + desc
+            inline += r" \textsl{" + date + "}."
+            inline2 = 'latex', r"\url{" + url + "}"
+            type_ = 'latex'
+            return [RawInline(type_, inline), LineBreak(), RawInline(inline2)]
 
     elif key == 'Image':
         [attrs, caption, src] = value

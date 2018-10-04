@@ -25,7 +25,7 @@ def mdFilter(key, value, format, meta):
     in order to be able to make a reference to them.
     """
     if key == 'Str':
-        if re.search("\$ref.*\$", value):
+        if re.search(r"$ref.*$", value):
             # if we find a link, set it as raw link and re-add a
             # backslash before the ref keyword and remote
             value = value.replace("$", "")
