@@ -32,7 +32,9 @@ all: ${DESTINATIONS} ## Build all rst or md files to pdf
 
 %.tex: %.rst tools/project_infos.yaml ## Converts from rst to tex
 	pandoc $< \
+		--from rst \
 		--filter tools/rst_filter.py \
+		--filter pandoc-citeproc \
 		--lua-filter tools/getMetadata.lua \
 		--standalone \
 		--listings \
@@ -43,7 +45,7 @@ all: ${DESTINATIONS} ## Build all rst or md files to pdf
 
 %.tex: %.md tools/project_infos.yaml ## Converts from md to tex
 	pandoc $< \
-		--filter tools/md_filter.py \
+		--filter pandoc-citeproc \
 		--lua-filter tools/getMetadata.lua \
 		--standalone \
 		--listings \
@@ -55,7 +57,6 @@ all: ${DESTINATIONS} ## Build all rst or md files to pdf
 %.pdf: %.tex ## Converts from tex to pdf
 	latexmk -pdf -xelatex $<
 	latexmk -c $<
-
 
 %.json: %.md
 	pandoc $< --to json --lua-filter=getMetadata.lua | python -m json.tool > ${<:.md=.json}
