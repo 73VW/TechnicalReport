@@ -1,49 +1,45 @@
 ---
-title: Project title
-subtitle: Project subtitle
+title: Compilateur APD-ISO - Cahier des charges
+subtitle: Travail de Bachelor
 lang: fr
 language: french
 author:
 - lastname: Pedretti
   firstname: Maël
-- lastname: Another author lastname here
-  firstname: Another author firstname here
 
 responsable:
-- lastname: A manager lastname here
-  firstname: A manager firstname here
-- lastname: Another manager lasname here
-  firstname: Another manager firstname here
+- lastname: Ghorbel
+  firstname: Hatem
 
 date: \today
 pagesize: a4
 
 institut:
-  name: Example
-#  logo: Path to your institut logo
+  name: HE-Arc
+  logo: img/logo.jpg
   logo_scale: 0.6
 
-project_logo: img/samiral
-project_logo_scale: 0.4
+#project_logo:
+#project_logo_scale: 0.4
 
 # styles
 #alignment: <alignment>
 fontsize: 12pt
 colorlinks: darkblue
 
-documentclass: scrreprt
+documentclass: article
 documentoptions: twoside
 
 numbersections: true
 
 # specify if you want your abstract on title page or on a second page
-abstractontitlepage: false
+abstractontitlepage: true
 
 toc: true
 toc-depth: 1
 lof: true
 
 abstract: |
-    This document is the base config file you have to update
+    Le projet Compilateur APD-ISO est réalisé dans le cadre du Travail de Bachelor, un module de 3ème année de Bachelor au sein de la Haute-École Arc — Ingénierie, section Développement Logiciel et Multimédia. Le présent document décrit le cahier des charges du projet et présente les objectifs ainsi que le planning.
 
 ---
